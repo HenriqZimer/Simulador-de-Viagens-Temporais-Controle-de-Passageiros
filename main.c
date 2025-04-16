@@ -11,6 +11,7 @@ int main() {
     int opcao, posicao;
     char nome[50], destino[50];
 
+
     do {
         printf("\n===== Agencia do Tempo =====\n");
         printf("1. Adicionar passageiro a espera\n");
@@ -29,8 +30,23 @@ int main() {
         case 1:
             printf("Nome do passageiro: ");
             scanf("%s", nome);
-            printf("Destino (Idade Média / Era dos Dinossauros / Ano 3000 / Corrida Espacial / Revolucao Industrial): ");
-            scanf("%s", destino);
+            printf("Selecione o destino:\n");
+            printf("1. Idade Media\n");
+            printf("2. Era dos Dinossauros\n");
+            printf("3. Ano 3000\n");
+            printf("4. Corrida Espacial\n");
+            printf("5. Revolucao Industrial\n");
+            int escolha;
+            scanf("%d", &escolha);
+
+            switch (escolha) {
+            case 1: strcpy(destino, "Idade Media"); break;
+            case 2: strcpy(destino, "Era dos Dinossauros"); break;
+            case 3: strcpy(destino, "Ano 3000"); break;
+            case 4: strcpy(destino, "Corrida Espacial"); break;
+            case 5: strcpy(destino, "Revolucao Industrial"); break;
+            default: printf("Opção inválida!\n"); continue;
+            }
             adicionar_espera(&espera, nome, destino);
             break;
         case 2:
