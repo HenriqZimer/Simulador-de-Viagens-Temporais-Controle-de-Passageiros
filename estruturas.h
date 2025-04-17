@@ -1,7 +1,8 @@
-
-// estruturas.h
 #ifndef ESTRUTURAS_H
 #define ESTRUTURAS_H
+
+#include <stdio.h>
+#include <stdlib.h>
 
 // TAD Era (lista encadeada simples)
 typedef struct Era {
@@ -26,7 +27,7 @@ typedef struct PassageiroEmbarcado {
   struct PassageiroEmbarcado* prox;
 } PassageiroEmbarcado;
 
-// Funções públicas
+// Funções principais
 Era* inicializar_eras();
 void listar_espera(Passageiro* inicio);
 void adicionar_espera(Passageiro** inicio, char nome[], char destino[]);
@@ -35,5 +36,9 @@ void listar_embarcados(PassageiroEmbarcado* inicio);
 int desembarcar_passageiro(PassageiroEmbarcado** embarcados, Era* eras, int posicao);
 void log_acao(const char* acao, const char* nome, const char* destino);
 Era* buscar_era(Era* eras, char destino[]);
+
+// Funções substitutas de string.h
+void strcpy_simples(char* dest, const char* src);
+int strcmp_simples(const char* s1, const char* s2);
 
 #endif
