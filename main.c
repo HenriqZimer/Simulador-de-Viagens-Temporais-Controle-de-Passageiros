@@ -1,3 +1,4 @@
+// Feito por Hnerique Zimermann e Gabriel Sereia
 #include "estruturas.h"
 
 int main() {
